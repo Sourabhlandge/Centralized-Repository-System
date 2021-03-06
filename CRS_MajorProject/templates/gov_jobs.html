@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% block body_block %}
+    <section id="services" class="services" style="margin-top: 10%;">
+        {% if main_title %}
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>{{ main_title|upper }}</h2>
+                </div>
+            </div>{% endif %}
+        {% if jobs_list %}
+
+            {% for job in post %}
+                <div>
+                    <a href="#"><h2>{{ job.title }}</h2></a>
+                    <p id="date">Published on {{ job.publish }}</p>
+                    {{ job.body|linebreaks }}
+                    <p>Apply link:-{{ job.link }}</p>
+                    <a href="{{ job.link }}" class="btn btn-lg btn-danger" role="button">Apply</a>
+                </div>
+                <hr>
+            {% endfor %}
+             {% include 'pagination.html' with page=post %}
+        {% else %}
+            <p>No Jobs Are Available</p>
+
+            </section><!-- End Services Section -->
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base2.html' %}
+{% block body_block %}
+    <section id="about" class="about" style="margin-top: -5%;">
+        <div class="container1" data-aos="fade-up">
+            <div class="section-title" style="margin-top: 12%; margin-left: -10%;">
+                <h2>SIGN UP <span class="bi bi-file-lock-fill"></span></h2>
+            </div>
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fn">Username:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="fn">{{ form.username }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fn">First Name:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="fn">{{ form.first_name }}</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="ln">Last Name:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="ln">{{ form.last_name }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="email">{{ form.email }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="p1">Password:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="p1">{{ form.password }}</span>
+                        <ul>
+                            <li>Your password can’t be too similar to your other personal information.</li>
+                            <li>Your password must contain at least 8 characters.</li>
+                            <li>Your password can’t be a commonly used password.</li>
+                            <li>Your password can’t be entirely numeric.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="p2">Confirm Password:</label>
+                    </div>
+                    <div class="col-75">
+                        <span id="p2">{{ form.confirm_password }}</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="signup">
+                        <input type="submit" class="btn btn-lg btn-success" value="Sign Up"><br><br><br>
+                        <p>If You have already an account<a href="/accounts/login">SignIn</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section><!-- End Services Section -->
+
+{% endblock %}

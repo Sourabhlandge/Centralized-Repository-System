@@ -1,0 +1,76 @@
+{% extends 'base2.html' %}
+{% block body_block %}
+
+
+
+
+    <!-- ======= Services Section ======= -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" style="margin-top: 5%;">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Government Schemes</h2>
+                <p>In Government Schemes user can see all the schems like:Education,Health & wellness,
+                    Electricity,Water and Local Services,Agriculture,Rular Enviroment,Bussiness and self-employed etc. related schemes.</p>
+            </div>
+             {% if messages %}
+                            <div class="alert alert-danger" role="alert" style="width: 70%;">
+                                {% for message in messages %}
+                                    <h5 style="color: black;text-align: center;">{{ message }}</h5>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box">
+                        <i class="bi bi-book"></i>
+                        <h4><a href="/education_s_list">Education and Learning</a></h4>
+                        <p>Education is the process of facilitating learning,or the acquisition of knowledge,skills,values,morals,beliefs and habits related schemes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box">
+                        <i class="bi bi-heart-half"></i>
+                        <h4><a href="/health_s_list">Health and Wellness </a></h4>
+                        <p>A health and wellness consists all the related government schemes with brief discription.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box">
+                        <i class="bi bi-tree"></i>
+                        <h4><a href="/agriculture_s_list">Agriculture,Rural and Enviroment</a></h4>
+                        <p>A agriculture,rural and enviroment consists all the related government schemes with brief
+                            discription.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-box">
+                        <i class="bi bi-lightning"></i>
+                        <h4><a href="/electricity_s_list">Electricity,Water and Local Services</a></h4>
+                        <p>A electricity,water and Local services consists all the related government schemes with brief
+                            discription.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-box">
+                        <i class="bi bi-briefcase"></i>
+                        <h4><a href="/business_s_list">Business and Self-employed</a></h4>
+                        <p>A business and self-employed consists all the related government schemes with brief
+                            discription.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon-box">
+                        <i class="bi bi-life-preserver"></i>
+                        <h4><a href="/youth_s_list">Youth Sports and Culture</a></h4>
+                        <p>A youth sports and culture consists all the related government schemes with brief
+                            discription.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+{% endblock %}
